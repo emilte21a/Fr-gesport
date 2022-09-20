@@ -1,20 +1,33 @@
 ﻿string[] acceptableAnswers = { "a", "b", "c", "d" };
 
+string[] aksept = { "ja", "nej"};
+
+
 
 Console.WriteLine("Hej och välkommen till Emils frågesport!");
 Console.WriteLine("");
 Console.WriteLine("Skriv ditt namn.");
 string namn = Console.ReadLine();
 
+if (namn.Length == 1)
+    System.Console.WriteLine(char.ToUpper(namn[0]));
 
 int totalpoäng = 0;
 
 
 Console.WriteLine();
-Console.WriteLine("Vill du börja spela? Ja eller Nej");
-string spela = Console.ReadLine();
-if (spela.Length == 1)
-    System.Console.WriteLine(char.ToUpper(spela[0]));
+Console.WriteLine("Vill du börja spela? ");
+
+
+
+
+string spela = ("");
+    while (aksept.Contains(spela) == false)
+    {
+        Console.WriteLine("Skriv Ja eller Nej: ");
+        spela = Console.ReadLine().ToLower();
+    }
+
 
 while (spela == "ja")
 {
@@ -347,16 +360,24 @@ while (spela == "ja")
         Console.ReadLine();
     
     }
+    
 
+    else if (spela == "nej")
+    {
+        Console.WriteLine("Tryck på ENTER för att avsluta");
+    }
+        
+    
+    
 
+    Console.WriteLine ("Vill du spela igen?");
 
-
-    Console.Clear();
-
-
-    Console.WriteLine("Vill du spela igen? ja eller nej");
-    spela = Console.ReadLine();
-
+    spela = ("");
+    while (aksept.Contains(spela) == false)
+    {
+        Console.WriteLine("Skriv Ja eller Nej: ");
+        spela = Console.ReadLine().ToLower();
+    }
 
     if (spela == "ja")
     {
@@ -364,10 +385,15 @@ while (spela == "ja")
     }
 
 
-    if (spela == "nej")
+    else if (spela == "nej")
     {
         Console.WriteLine("Tryck på ENTER för att avsluta");
     }
 
+
+    
 }
+
+
+
 Console.ReadLine();
