@@ -22,11 +22,11 @@ Console.WriteLine("Vill du börja spela? ");
 
 
 string spela = ("");
-    while (aksept.Contains(spela) == false)
-    {
-        Console.WriteLine("Skriv Ja eller Nej: ");
-        spela = Console.ReadLine().ToLower();
-    }
+while (aksept.Contains(spela) == false)
+{
+    Console.WriteLine("Skriv Ja eller Nej: ");
+    spela = Console.ReadLine().ToLower();
+}
 
 
 while (spela == "ja")
@@ -362,7 +362,7 @@ while (spela == "ja")
     }
     
 
-    else if (spela == "nej")
+    if (spela == "nej")
     {
         Console.WriteLine("Tryck på ENTER för att avsluta");
     }
@@ -381,6 +381,7 @@ while (spela == "ja")
 
     if (spela == "ja")
     {
+        totalpoäng = 0;
         continue;
     }
 
