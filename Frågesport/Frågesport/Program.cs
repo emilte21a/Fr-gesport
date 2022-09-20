@@ -1,303 +1,369 @@
-﻿
+﻿string[] acceptableAnswers = { "a", "b", "c", "d" };
+
 
 Console.WriteLine("Hej och välkommen till Emils frågesport!");
 Console.WriteLine("");
 Console.WriteLine("Skriv ditt namn.");
 string namn = Console.ReadLine();
 
+
 int totalpoäng = 0;
 
-Console.Clear();
 
+Console.WriteLine();
+Console.WriteLine("Vill du börja spela? Ja eller Nej");
+string spela = Console.ReadLine();
+if (spela.Length == 1)
+    System.Console.WriteLine(char.ToUpper(spela[0]));
 
-
-Console.WriteLine($"{namn} du kommer att få svara på 3 frågor. Ett rätt svar ger ett poäng, ett fel svar ger inga poäng. Du kommer att få välja vilket ämne som frågorna ska handla om.");
-Console.WriteLine("");
-
-
-Console.WriteLine("Vill du att frågesporten ska handla om musik eller spel?");
-string val = Console.ReadLine();
-
-if (val == "musik")
+while (spela == "ja")
 {
-    Console.Clear();
-    Console.WriteLine("Du har valt musikfrågor.");
-    Console.WriteLine("");
 
-
-    Console.WriteLine("Fråga 1.");
-    Console.WriteLine("");
-    Console.WriteLine("När skapades det första pianot?");
-    Console.WriteLine("");
-    Console.WriteLine("A) 1504");
-    Console.WriteLine("B) 1709");
-    Console.WriteLine("C) 1830");
-    Console.WriteLine("D) 1832");
-
-    Console.WriteLine("");
-    Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
-    string fragaett = Console.ReadLine();
-
-    Console.WriteLine("");
-
-    if (fragaett == "b")
-    {
-
-        totalpoäng = totalpoäng + 1;
-
-        Console.WriteLine("Du fick ett poäng!");
-        Console.WriteLine($"Antal poäng: {totalpoäng}");
-
-    }
-
-    else if (fragaett != "b")
-    {
-        Console.WriteLine("Du fick inga poäng!");
-        Console.WriteLine($"antal poäng: {totalpoäng}");
-
-    }
-    Console.WriteLine("Tryck ENTER för att komma till fråga 2.");
-    Console.ReadLine();
     Console.Clear();
 
 
-    Console.WriteLine("Fråga 2.");
-    Console.WriteLine("");
-    Console.WriteLine("När släpptes låten 'Last Christmas' av bandet Wham!");
-    Console.WriteLine("");
-    Console.WriteLine("A) 1972");
-    Console.WriteLine("B) 1990");
-    Console.WriteLine("C) 1984");
-    Console.WriteLine("D) 2001");
 
-    Console.WriteLine("");
-    Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
-    string fragatva = Console.ReadLine();
-
+    Console.WriteLine($"Hej {namn} du kommer att få svara på 3 frågor. Ett rätt svar ger ett poäng, ett fel svar ger inga poäng. Du kommer att få välja vilket ämne som frågorna ska handla om.");
     Console.WriteLine("");
 
-    if (fragatva == "c")
+
+    Console.WriteLine("Vill du att frågesporten ska handla om musik eller spel?");
+    string val = Console.ReadLine();
+
+    while (val != "musik" && val != "spel")
     {
+        Console.WriteLine("Men seriöst, vad vill du att den ska handla om?");
+        val = Console.ReadLine();
+    }
 
-        totalpoäng = totalpoäng + 1;
+    if (val == "musik")
+    {
+        Console.Clear();
+        Console.WriteLine("Du har valt musikfrågor.");
+        Console.WriteLine("");
 
-        Console.WriteLine("Du fick ett poäng!");
-        Console.WriteLine($"Antal poäng: {totalpoäng}");
+
+        Console.WriteLine("Fråga 1.");
+        Console.WriteLine("");
+        Console.WriteLine("När skapades det första pianot?");
+        Console.WriteLine("");
+        Console.WriteLine("A) 1504");
+        Console.WriteLine("B) 1709");
+        Console.WriteLine("C) 1830");
+        Console.WriteLine("D) 1832");
+
+        Console.WriteLine("");
+
+        string fragaett = "";
+        while (acceptableAnswers.Contains(fragaett) == false)
+        {
+            Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
+            fragaett = Console.ReadLine().ToLower();
+        }
+
+        Console.WriteLine("");
+
+        if (fragaett == "b")
+        {
+
+            totalpoäng = totalpoäng + 1;
+
+            Console.WriteLine("Du fick ett poäng!");
+            Console.WriteLine($"Antal poäng: {totalpoäng}");
+
+        }
+
+        else if (fragaett != "b")
+        {
+            Console.WriteLine("Du fick inga poäng!");
+            Console.WriteLine($"antal poäng: {totalpoäng}");
+
+        }
+        Console.WriteLine("Tryck ENTER för att komma till fråga 2.");
+        Console.ReadLine();
+        Console.Clear();
+
+
+        Console.WriteLine("Fråga 2.");
+        Console.WriteLine("");
+        Console.WriteLine("När släpptes låten 'Last Christmas' av bandet Wham!");
+        Console.WriteLine("");
+        Console.WriteLine("A) 1972");
+        Console.WriteLine("B) 1990");
+        Console.WriteLine("C) 1984");
+        Console.WriteLine("D) 2001");
+
+        Console.WriteLine("");
+
+        string fragatva = "";
+        while (acceptableAnswers.Contains(fragatva) == false)
+        {
+            Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
+            fragatva = Console.ReadLine().ToLower();
+        }
+
+        Console.WriteLine("");
+
+        if (fragatva == "c")
+        {
+
+            totalpoäng = totalpoäng + 1;
+
+            Console.WriteLine("Du fick ett poäng!");
+            Console.WriteLine($"Antal poäng: {totalpoäng}");
+
+        }
+
+        else if (fragatva != "c")
+        {
+            Console.WriteLine("Du fick inga poäng!");
+            Console.WriteLine($"antal poäng: {totalpoäng}");
+
+        }
+
+        Console.WriteLine("Tryck ENTER för att komma till fråga 3.");
+        Console.ReadLine();
+        Console.Clear();
+
+        Console.WriteLine("Fråga 3.");
+        Console.WriteLine("");
+        Console.WriteLine("Vart kommer artisten 'Yung Lean' ifrån?");
+        Console.WriteLine("");
+        Console.WriteLine("A) Sverige");
+        Console.WriteLine("B) Norge");
+        Console.WriteLine("C) USA");
+        Console.WriteLine("D) Storbritannien");
+
+        Console.WriteLine("");
+
+        string fragatre = "";
+        while (acceptableAnswers.Contains(fragatre) == false)
+        {
+            Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
+            fragatre = Console.ReadLine().ToLower();
+        }
+
+
+        Console.WriteLine("");
+
+        if (fragatre == "a")
+        {
+
+            totalpoäng = totalpoäng + 1;
+
+            Console.WriteLine("Du fick ett poäng!");
+            Console.WriteLine($"Antal poäng: {totalpoäng}");
+
+        }
+
+        else if (fragatre != "a")
+        {
+            Console.WriteLine("Du fick inga poäng!");
+            Console.WriteLine($"antal poäng: {totalpoäng}");
+
+        }
+
+        Console.WriteLine("Tryck ENTER för att komma vidare.");
+        Console.ReadLine();
+        Console.Clear();
+
+        if (totalpoäng == 3)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Bra jobbat");
+
+        }
+        else if (totalpoäng == 2)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Nästan perfekt");
+
+        }
+
+        else if (totalpoäng == 1)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Äh bättre kan du..");
+
+        }
+
+        if (totalpoäng == 0)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Hur lyckas du vara så kass??");
+
+        }
 
     }
 
-    else if (fragatva != "b")
+    if (val == "spel")
     {
-        Console.WriteLine("Du fick inga poäng!");
-        Console.WriteLine($"antal poäng: {totalpoäng}");
+        Console.Clear();
+        Console.WriteLine("Du har valt spelfrågor.");
+        Console.WriteLine("");
+
+
+        Console.WriteLine("Fråga 1.");
+        Console.WriteLine("");
+        Console.WriteLine("När skapades det första spelet?");
+        Console.WriteLine("");
+        Console.WriteLine("A) 1941");
+        Console.WriteLine("B) 1962");
+        Console.WriteLine("C) 1966");
+        Console.WriteLine("D) 1990");
+
+        Console.WriteLine("");
+        string fragaett = "";
+        while (acceptableAnswers.Contains(fragaett) == false)
+        {
+            Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
+            fragaett = Console.ReadLine().ToLower();
+        }
+
+        Console.WriteLine("");
+
+        if (fragaett == "b")
+        {
+
+            totalpoäng = totalpoäng + 1;
+
+            Console.WriteLine("Du fick ett poäng!");
+            Console.WriteLine($"Antal poäng: {totalpoäng}");
+
+        }
+
+        else if (fragaett != "b")
+        {
+            Console.WriteLine("Du fick inga poäng!");
+            Console.WriteLine($"antal poäng: {totalpoäng}");
+
+        }
+        Console.WriteLine("Tryck ENTER för att komma till fråga 2.");
+        Console.ReadLine();
+        Console.Clear();
+
+
+        Console.WriteLine("Fråga 2.");
+        Console.WriteLine("");
+        Console.WriteLine("När släpptes spelet 'Minecraft' av utvecklarföretaget Mojang?");
+        Console.WriteLine("");
+        Console.WriteLine("A) 2006");
+        Console.WriteLine("B) 2008");
+        Console.WriteLine("C) 2009");
+        Console.WriteLine("D) 2013");
+
+        Console.WriteLine("");
+        string fragatva = "";
+        while (acceptableAnswers.Contains(fragatva) == false)
+        {
+            Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
+            fragatva = Console.ReadLine().ToLower();
+        }
+
+        Console.WriteLine("");
+
+        if (fragatva == "c")
+        {
+
+            totalpoäng = totalpoäng + 1;
+
+            Console.WriteLine("Du fick ett poäng!");
+            Console.WriteLine($"Antal poäng: {totalpoäng}");
+
+        }
+
+        else if (fragatva != "c")
+        {
+            Console.WriteLine("Du fick inga poäng!");
+            Console.WriteLine($"antal poäng: {totalpoäng}");
+
+        }
+
+        Console.WriteLine("Tryck ENTER för att komma till fråga 3.");
+        Console.ReadLine();
+        Console.Clear();
+
+        Console.WriteLine("Fråga 3.");
+        Console.WriteLine("");
+        Console.WriteLine("Vart kommer spelet 'Terraria' ifrån?");
+        Console.WriteLine("");
+        Console.WriteLine("A) USA");
+        Console.WriteLine("B) Ryssland");
+        Console.WriteLine("C) Tyskland");
+        Console.WriteLine("D) Storbritannien");
+
+        Console.WriteLine("");
+        string fragatre = "";
+        while (acceptableAnswers.Contains(fragatre) == false)
+        {
+            Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
+            fragatre = Console.ReadLine().ToLower();
+        }
+
+        Console.WriteLine("");
+
+        if (fragatre == "a")
+        {
+
+            totalpoäng = totalpoäng + 1;
+
+            Console.WriteLine("Du fick ett poäng!");
+            Console.WriteLine($"Antal poäng: {totalpoäng}");
+
+        }
+
+        else if (fragatre != "a")
+        {
+            Console.WriteLine("Du fick inga poäng!");
+            Console.WriteLine($"antal poäng: {totalpoäng}");
+
+        }
+
+        Console.WriteLine("Tryck ENTER för att komma vidare.");
+        Console.ReadLine();
+        Console.Clear();
+
+        if (totalpoäng == 3)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Bra jobbat");
+
+        }
+        else if (totalpoäng == 2)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Nästan perfekt");
+
+        }
+
+        else if (totalpoäng == 1)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Äh bättre kan du..");
+
+        }
+
+        if (totalpoäng == 0)
+        {
+            Console.WriteLine($"Du fick {totalpoäng} poäng! Hur lyckas du vara så kass??");
+
+        }
 
     }
 
-    Console.WriteLine("Tryck ENTER för att komma till fråga 3.");
-    Console.ReadLine();
+
+
+
     Console.Clear();
 
-    Console.WriteLine("Fråga 3.");
-    Console.WriteLine("");
-    Console.WriteLine("Vart kommer artisten 'Yung Lean' ifrån?");
-    Console.WriteLine("");
-    Console.WriteLine("A) Sverige");
-    Console.WriteLine("B) Norge");
-    Console.WriteLine("C) USA");
-    Console.WriteLine("D) Storbritannien");
 
-    Console.WriteLine("");
-    Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
-    string fragatre = Console.ReadLine();
+    Console.WriteLine("Vill du spela igen? ja eller nej");
+    spela = Console.ReadLine();
 
-    Console.WriteLine("");
 
-    if (fragatre == "a")
+    if (spela == "ja")
     {
-
-        totalpoäng = totalpoäng + 1;
-
-        Console.WriteLine("Du fick ett poäng!");
-        Console.WriteLine($"Antal poäng: {totalpoäng}");
-
+        continue;
     }
 
-    else if (fragatre != "b")
+
+    if (spela == "nej")
     {
-        Console.WriteLine("Du fick inga poäng!");
-        Console.WriteLine($"antal poäng: {totalpoäng}");
-
-    }
-
-    Console.WriteLine("Tryck ENTER för att komma vidare.");
-    Console.ReadLine();
-    Console.Clear();
-
-    if (totalpoäng == 3)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Bra jobbat");
-
-    }
-    else if (totalpoäng == 2)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Nästan perfekt");
-
-    }
-
-    else if (totalpoäng == 1)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Äh bättre kan du..");
-
-    }
-
-    if (totalpoäng == 0)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Hur lyckas du vara så kass??");
-
+        Console.WriteLine("Tryck på ENTER för att avsluta");
     }
 
 }
-
-if (val == "spel")
-{
-    Console.Clear();
-    Console.WriteLine("Du har valt spelfrågor.");
-    Console.WriteLine("");
-
-
-    Console.WriteLine("Fråga 1.");
-    Console.WriteLine("");
-    Console.WriteLine("När skapades det första spelet?");
-    Console.WriteLine("");
-    Console.WriteLine("A) 1941");
-    Console.WriteLine("B) 1962");
-    Console.WriteLine("C) 1966");
-    Console.WriteLine("D) 1990");
-
-    Console.WriteLine("");
-    Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
-    string fragaett = Console.ReadLine();
-
-    Console.WriteLine("");
-
-    if (fragaett == "b")
-    {
-
-        totalpoäng = totalpoäng + 1;
-
-        Console.WriteLine("Du fick ett poäng!");
-        Console.WriteLine($"Antal poäng: {totalpoäng}");
-
-    }
-
-    else if (fragaett != "b")
-    {
-        Console.WriteLine("Du fick inga poäng!");
-        Console.WriteLine($"antal poäng: {totalpoäng}");
-
-    }
-    Console.WriteLine("Tryck ENTER för att komma till fråga 2.");
-    Console.ReadLine();
-    Console.Clear();
-
-
-    Console.WriteLine("Fråga 2.");
-    Console.WriteLine("");
-    Console.WriteLine("När släpptes spelet 'Minecraft' av utvecklarföretaget Mojang?");
-    Console.WriteLine("");
-    Console.WriteLine("A) 2006");
-    Console.WriteLine("B) 2008");
-    Console.WriteLine("C) 2009");
-    Console.WriteLine("D) 2013");
-
-    Console.WriteLine("");
-    Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
-    string fragatva = Console.ReadLine();
-
-    Console.WriteLine("");
-
-    if (fragatva == "c")
-    {
-
-        totalpoäng = totalpoäng + 1;
-
-        Console.WriteLine("Du fick ett poäng!");
-        Console.WriteLine($"Antal poäng: {totalpoäng}");
-
-    }
-
-    else if (fragatva != "b")
-    {
-        Console.WriteLine("Du fick inga poäng!");
-        Console.WriteLine($"antal poäng: {totalpoäng}");
-
-    }
-
-    Console.WriteLine("Tryck ENTER för att komma till fråga 3.");
-    Console.ReadLine();
-    Console.Clear();
-
-    Console.WriteLine("Fråga 3.");
-    Console.WriteLine("");
-    Console.WriteLine("Vart kommer spelet 'Terraria' ifrån?");
-    Console.WriteLine("");
-    Console.WriteLine("A) USA");
-    Console.WriteLine("B) Ryssland");
-    Console.WriteLine("C) Tyskland");
-    Console.WriteLine("D) Storbritannien");
-
-    Console.WriteLine("");
-    Console.WriteLine("Skriv in ditt svar a, b ,c eller d: ");
-    string fragatre = Console.ReadLine();
-
-    Console.WriteLine("");
-
-    if (fragatre == "a")
-    {
-
-        totalpoäng = totalpoäng + 1;
-
-        Console.WriteLine("Du fick ett poäng!");
-        Console.WriteLine($"Antal poäng: {totalpoäng}");
-
-    }
-
-    else if (fragatre != "b")
-    {
-        Console.WriteLine("Du fick inga poäng!");
-        Console.WriteLine($"antal poäng: {totalpoäng}");
-
-    }
-
-    Console.WriteLine("Tryck ENTER för att komma vidare.");
-    Console.ReadLine();
-    Console.Clear();
-
-    if (totalpoäng == 3)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Bra jobbat");
-
-    }
-    else if (totalpoäng == 2)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Nästan perfekt");
-
-    }
-
-    else if (totalpoäng == 1)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Äh bättre kan du..");
-
-    }
-
-    if (totalpoäng == 0)
-    {
-        Console.WriteLine($"Du fick {totalpoäng} poäng! Hur lyckas du vara så kass??");
-
-    }
-
-}
-
-
-
 Console.ReadLine();
