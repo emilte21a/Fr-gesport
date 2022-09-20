@@ -190,6 +190,8 @@ while (spela == "ja")
 
         }
 
+        Console.ReadLine();
+        
     }
 
     if (val == "spel")
@@ -342,6 +344,8 @@ while (spela == "ja")
 
         }
 
+        Console.ReadLine();
+    
     }
 
 
